@@ -1,0 +1,116 @@
+body  {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container {
+    flex: 1;
+}
+.navbar {
+    height: 5rem;
+    background-color: white;
+    /* position: sticky;
+    top: 0px; */
+}
+.fa-compass {
+    color: red;
+    font-size: 2rem;
+}
+.nav-link {
+    color: #222222 !important;
+}
+
+/* Footer */
+.f-info {
+    padding: 0.5rem 0 0.5rem 0;
+    height: 10rem;
+    display: flex;
+    background-color: #ebebeb;
+    flex-wrap: wrap;
+    /* width: 100%; */
+    /* align-items: center; */
+    justify-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.f-info-links a {
+    text-decoration: none;
+    color: #222;
+    /* width: 100%;
+    text-align: center; */
+}
+.f-info-links {
+    /* text-decoration: none;
+    color: #222; */
+    width: 100%;
+    text-align: center;
+}
+.f-info-links a:hover{
+    text-decoration: underline;
+    color: #223666;
+}
+.info-desc {
+    width: 100%;
+    text-align: center;
+}
+.f-info-socials {
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: center;
+}
+.f-info i {
+    margin: 0 0.25rem 0.5 0.25rem;
+}
+.card {
+    border: none !important;
+    margin-bottom: 2rem ;
+}
+.card-img-top {
+    width: 100% !important;
+    border-radius: 1rem !important;
+    object-fit: cover !important;
+}
+.card-body {
+    padding: 0 !important;
+}
+.card-text p {
+    font-weight: 400;
+}
+.listing-link {
+    text-decoration: none;
+}
+/* Overlay */
+.card-img-overlay {
+    opacity: 0;
+}
+.card-img-overlay:hover {
+    opacity: 0.2;
+    background-color: #fff;
+}
+
+.edit-btn {
+    background-color: red !important;
+    border: none !important;
+} 
+
+/* Show Page  */
+.show-img {
+    height: 40vh;
+    margin: 1rem 0 1rem 0;
+
+}
+.btns {
+    display: flex;
+    justify-content: center;
+}
+.btns-class {
+    display: flex;
+    gap: 2rem;
+}
+.btns-class .btn {
+    width: 5rem;
+}
+.btns-class a {
+    background-color: red;
+}

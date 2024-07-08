@@ -1,0 +1,151 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    #filters {
+        margin-top: 1rem;
+        display: flex;
+        width: auto;
+        justify-content: space-between;
+    }
+    .filter {
+        width: auto;
+        opacity: 0.7;
+    }
+    .icon {
+        text-align: center;
+        
+    }
+    .filter:hover {
+        opacity: 1;
+    }
+    .filter > p {
+        font-size: 0.8rem;
+    }
+    .hidden {
+        display: none;
+    }
+
+    .tax-toggle {
+        border: 1px solid rgb(42, 35, 35);
+        border-radius: 1rem;
+        padding: 0.5rem;
+        height: 3rem;
+    }
+
+</style>
+
+
+    <div id="filters" class="mb-3 mt-3">
+        <div class="filter">
+            <div class="icon">
+                <i class="fa-solid fa-fire-flame-curved"></i>
+            </div>
+            <p>Trending</p>
+        </div>
+
+        <div class="filter">
+            <div class="icon">
+                <i class="fa-solid fa-bed"></i>
+            </div>
+            <p>Rooms</p>
+        </div>
+
+        <div class="filter">
+            <div class="icon">
+                <i class="fa-solid fa-mountain"></i>
+            </div>
+            <p>Hill Stations</p>
+        </div>
+
+        <div class="filter">
+            <div class="icon">
+                <i class="fa-solid fa-city"></i>
+            </div>
+            <p>City Center</p>
+        </div>
+
+        <div class="filter">
+            <div class="icon">
+                <i class="fa-solid fa-person-swimming"></i>
+            </div>
+            <p>With Pools</p>
+        </div>
+
+        <div class="filter">
+            <div class="icon">
+                <i class="fa-solid fa-dumbbell"></i>
+            </div>
+            <p>With Gym</p>
+        </div>
+
+        <div class="filter">
+            <div class="icon">
+                <i class="fa-solid fa-utensils"></i>
+            </div>
+            <p>Free Breakfast</p>
+        </div>
+
+        <div class="filter">
+            <div class="icon">
+                <i class="fa-solid fa-car"></i>
+            </div>
+            <p>Free parking</p>
+        </div>
+
+        <div class="filter">
+            <div class="icon">
+                <i class="fa-solid fa-plane-up"></i>
+            </div>
+            <p>Near Airport</p>
+        </div>
+
+        <div class="tax-toggle">
+            <div class="form-check-reverse form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>
+            </div>
+        </div>
+        
+
+    </div>
+
+    <!-- <form method="get" action="/listings/new">
+        <button>Create New Listing</button>
+    </form> -->
+
+    <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1">
+        <% for(let listing of allListings) {%>
+            <a class="listing-link" href="/listings/<%=listing._id%>">
+                <div class="card" >
+                    <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image" style="height: 20rem;">
+                    <div class="card-img-overlay">
+                        
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <b><%= listing.title %></b><br>
+                            <b>Price : </b>&#8377;<%= listing.price.toLocaleString("en-IN") %> 
+                            <i class="tax-info hidden">+18% GST</i> per night
+                        </p>
+                    </div>
+                </div>
+            </a> 
+        <%}%>
+    </div>
+
+    
+<!-- <script>
+    let taxSwitch = document.getElementById("flexSwitchCheckDefault");
+    taxSwitch.addEventListener("onclick", ()=> {
+        console.log("Clicked");
+        let taxPrice = document.querySelector(".card-body > .card-text  i");
+        
+        console.log(taxPrice);
+        for(info of taxPrice) {
+            info.classList.toggle("hidden");
+        }
+    });
+</script> -->

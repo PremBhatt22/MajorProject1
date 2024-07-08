@@ -1,0 +1,46 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<body> 
+    <h3>Create a new Listing...</h3>
+    <form method="post" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input required name="listing[title]" placeholder="Please Enter Title" type="text" class="form-control">
+            <div class="valid-feedback">Title looks good!</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea required name="listing[description]" class="form-control"></textarea>
+            <div class="invalid-feedback">Enter a valid description.</div>
+        </div>
+
+        <!-- <div class="mb-3">
+            <label for="image" class="form-label">Image Link</label>
+            <input name="listing[image]" placeholder="Please Enter image URL" type="text" class="form-control">
+        </div> -->
+
+        <div class="mb-3">
+            <label for="image" class="form-label">Upload Image File</label>
+            <input name="listing[image]" type="file" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input required name="listing[price]" placeholder="Please Enter Price"  class="form-control">
+            <div class="invalid-feedback">Enter a valid price.</div>
+        </div> 
+
+        <div class="mb-3">
+            <label for="country" class="form-label">Country</label>
+            <input required name="listing[country]" placeholder="Please Enter Country" type="text" class="form-control">
+            <div class="invalid-feedback">Enter a valid country.</div>
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input required name="listing[location]" placeholder="Please Enter Location" type="text" class="form-control">
+            <div class="invalid-feedback">Enter a valid location.</div>
+        </div>
+        <button class="btn btn-dark edit-btn">List</button>
+        <br><br><br>
+    </form>
+</body>
